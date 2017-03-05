@@ -31,11 +31,13 @@ files.each do |file|
   dcm = DICOM::DObject.read(file)
   # If the file was read successfully as a DICOM file, go ahead and extract content:
   if dcm.read?
+    dcm.print
     study = dcm.value("0008,1030")
     name = dcm.value("0010,0010")
     voltage = dcm.value("0018,0060")
     current = dcm.value("0018,1151")
     exposure = dcm.value("0018,1152")
+    summary = dcm.print
     # Store the data in the database:
     e = Examination.new
     e.study = study
@@ -43,6 +45,7 @@ files.each do |file|
     e.voltage = voltage
     e.current = current
     e.exposure = exposure
+    e.summary = summary
     e.save
   end
 end

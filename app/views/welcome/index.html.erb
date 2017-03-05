@@ -58,12 +58,11 @@
   <% @examinations.each do |examination| %>
       <% unless @study and @study != examination.study %>
           <tr>
-            <td><%= link_to examination.study, :action => 'index', :study => examination.study %></td>
+            <td><%= examination.study %></td>
             <td><%= examination.name %></td>
             <td><%= examination.voltage %></td>
             <td><%= examination.current %></td>
             <td><%= examination.exposure %></td>
-            <td><%= examination.summary %></td>
             <td><%= link_to 'Show', examination %></td>
             <td><%= link_to 'Edit', edit_examination_path(examination) %></td>
             <td><%= link_to 'Destroy', examination, :confirm => 'Are you sure?', :method => :delete %></td>

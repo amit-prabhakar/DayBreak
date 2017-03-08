@@ -1,12 +1,10 @@
 <h1>Listing examinations</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>Study</th>
     <th>Name</th>
-    <th>Voltage</th>
-    <th>Current</th>
-    <th>Exposure</th>
+	<th>Actions</th>
   </tr>
 
   <% @examinations.each do |examination| %>
@@ -14,12 +12,11 @@
           <tr>
             <td><%= link_to examination.study, :action => 'index', :study => examination.study %></td>
             <td><%= examination.name %></td>
-            <td><%= examination.voltage %></td>
-            <td><%= examination.current %></td>
-            <td><%= examination.exposure %></td>
-            <td><%= link_to 'Show', examination %></td>
-            <td><%= link_to 'Edit', edit_examination_path(examination) %></td>
-            <td><%= link_to 'Destroy', examination, :confirm => 'Are you sure?', :method => :delete %></td>
+            <td>
+	            <%= link_to 'Show', examination %>
+	            <%= link_to 'Edit', edit_examination_path(examination) %>
+	            <%= link_to 'Destroy', examination, :confirm => 'Are you sure?', :method => :delete %>
+            </td>
           </tr>
       <% end %>
   <% end %>

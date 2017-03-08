@@ -9,10 +9,7 @@
 			<% if user_signed_in? %>
 			<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Ultrasound<span class="caret"></span></a>
 			<ul class="dropdown-menu">
-				<li><a href="#">By Patient</a></li>
-				<li><a href="#">By Provider</a></li>
-				<li><a href="#">By Sonographer</a></li>
-				<li><a href="#">By Study Location</a></li>
+				<li><%= link_to 'By Something', examinations_path %></li>
 			</ul>
 			</li>
 			<li><a href="#">Other Module</a></li>

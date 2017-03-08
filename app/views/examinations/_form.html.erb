@@ -1,77 +1,93 @@
 <%= form_for(examination) do |f| %>
-  <% if examination.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(examination.errors.count, "error") %> prohibited this examination from being saved:</h2>
+	<% if examination.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(examination.errors.count, "error") %> prohibited this examination from being saved:</h2>
 
-      <ul>
-      <% examination.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+			<ul>
+			<% examination.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
 
-  <div class="field">
-    <%= f.label :study %>
-    <%= f.text_field :study %>
-  </div>
+<!-- Study Information -->
+<div class="row">
+	<div class="field">
+		<%= f.label :study %>
+		<%= f.text_field :study %>
+	</div>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+	<div class="field">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+</div>
 
-  <div class="field">
-    <%= f.label :voltage %>
-    <%= f.text_field :voltage %>
-  </div>
+<!-- The Tabs -->
+<div class="row">	
+	<ul class="nav nav-tabs">
+		<li class="active"><a data-toggle="tab" href="#tab_demographics">Demographics</a></li>
+		<li><a data-toggle="tab" href="#tab_placenta">Placenta</a></li>
+		<li><a data-toggle="tab" href="#menu_fp">Fetal Position</a></li>
+		<li><a data-toggle="tab" href="#menu_fh">Fetal Heart</a></li>
+		<li><a data-toggle="tab" href="#menu_fa">Fetal Anatomy</a></li>
+		<li><a data-toggle="tab" href="#menu_ma">Maternal Anatomy</a></li>
+		<li><a data-toggle="tab" href="#menu_af">Amniotic Fluid</a></li>
+		<li><a data-toggle="tab" href="#menu_bm">Biometry</a></li>
+	</ul>
+	
+	<div class="tab-content">
+		<div id="tab_demographics" class="tab-pane fade in active">
+			<div class="col-md-6">
+				<div class="form-group">
+					<%= f.label "Study Location" %>
+					<%= f.select(:demographics_study_location, [['Location 1','L1'],['Location 2','L2'],['Location 3','L3']], {}, {:class => "form-control"})%>
+				</div>
+			
+				<div class="form-group">
+					<%= f.label "Accession" %>
+					<%= f.text_field :demographics_accession, :class => "form-control" %>
+				</div>
+				
+				<div class="form-group">
+					<%= f.label "Study Date" %>
+					<%= f.date_field :demographics_study_date, :class => "form-control" %>
+				</div>
+				
+				<div class="form-group">
+					<%= f.label "Gravida" %>
+					<%= f.number_field :demographics_gravida, :class => "form-control" %>
+				</div>
+			</div>
+			
+			<div class="col-md-6">
+				<div class="form-group">
+					<%= f.label "Para" %>
+					<%= f.number_field :demographics_para, :class => "form-control" %>
+				</div>
+				
+				<div class="form-group">
+					<%= f.label "LMP" %>
+					<%= f.date_field :demographics_lmp, :class => "form-control" %>
+				</div>
+				
+				<div class="form-group">
+					<%= f.label "Maternal Weight" %>
+					<%= f.number_field :demographics_maternal_weight, :class => "form-control" %>
+				</div>
+			</div>	
+		</div>
+		
+		<div id="tab_placenta">
+		</div>
+	</div>
+</div>
 
-  <div class="field">
-    <%= f.label :current %>
-    <%= f.text_field :current %>
-  </div>
-
-  <div class="field">
-    <%= f.label :exposure %>
-    <%= f.text_field :exposure %>
-  </div>
-
-  <div class="field">
-    <%= f.label "Study Location" %>
-    <%= f.select :demographics_study_location, [['Location 1','L1'],['Location 2','L2'],['Location 3','L3']] %>
-  </div>
-
-  <div class="field">
-    <%= f.label "Accession" %>
-    <%= f.text_field :demographics_accession %>
-  </div>
-  
-  <div class="field">
-    <%= f.label "Study Date" %>
-    <%= f.date_field :demographics_study_date %>
-  </div>
-  
-  <div class="field">
-    <%= f.label "Gravida" %>
-    <%= f.number_field :demographics_gravida %>
-  </div>
-  
-  <div class="field">
-    <%= f.label "Para" %>
-    <%= f.number_field :demographics_para %>
-  </div>
-  
-  <div class="field">
-    <%= f.label "LMP" %>
-    <%= f.date_field :demographics_lmp %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :demographics_maternal_weight %>
-    <%= f.number_field :demographics_maternal_weight %>
-  </div>  
-  
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<!--Save, Cancel Buttons-->
+<div class="row">
+	<div class="pull-right">
+		<%= f.submit "Save", :class => "btn btn-primary"%>
+	</div>
+</div>
 <% end %>

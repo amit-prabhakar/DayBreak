@@ -36,6 +36,41 @@
     <%= f.text_field :exposure %>
   </div>
 
+  <div class="field">
+    <%= f.label "Study Location" %>
+    <%= f.select :demographics_study_location, [['Location 1','L1'],['Location 2','L2'],['Location 3','L3']] %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Accession" %>
+    <%= f.text_field :demographics_accession %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Study Date" %>
+    <%= f.date_field :demographics_study_date %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Gravida" %>
+    <%= f.number_field :demographics_gravida %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Para" %>
+    <%= f.number_field :demographics_para %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "LMP" %>
+    <%= f.date_field :demographics_lmp %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :demographics_maternal_weight %>
+    <%= f.number_field :demographics_maternal_weight %>
+  </div>  
+  
   <div class="actions">
     <%= f.submit %>
   </div>

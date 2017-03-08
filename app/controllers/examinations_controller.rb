@@ -76,6 +76,6 @@ class ExaminationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def examination_params
-      params.require(:examination).permit(:study, :name, :voltage, :current, :exposure)
+      params.require(:examination).permit(:study, :name, :voltage, :current, :exposure, :demographics_study_location, :demographics_accession, :demographics_study_date, :demographics_gravida, :demographics_para, :demographics_lmp, :demographics_maternal_weight)
     end
 end

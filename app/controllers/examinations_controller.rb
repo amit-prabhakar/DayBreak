@@ -76,6 +76,16 @@ class ExaminationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def examination_params
-      params.require(:examination).permit(:study, :name, :voltage, :current, :exposure, :demographics_study_location, :demographics_accession, :demographics_study_date, :demographics_gravida, :demographics_para, :demographics_lmp, :demographics_maternal_weight)
+      params.require(:examination).permit(:study, :name, :voltage, :current, :exposure, 
+      :demographics_study_location, :demographics_accession, :demographics_study_date, 
+      :demographics_gravida, :demographics_para, :demographics_lmp, :demographics_maternal_weight, 
+      :fetal_pos_presentation, :fetal_pos_gestation_loc, :fetal_pos_probes, :fetal_pos_scan_quality, :fetal_pos_study_tech,
+      :placenta_general, :placenta_longitude, :placenta_transverse, :placenta_appearance, :placenta_cord_vessels, :placenta_grade, :placenta_cord_ins, :placenta_chorionicity, 
+      :fetal_heart_hrate, :fetal_heart_4chamber, :fetal_heart_locsz, :fetal_heart_rhythm, :fetal_heart_lout, :fetal_heart_rout, :fetal_heart_venous_sys, 
+      :fetal_anat_general, :fetal_anat_intercranial, :fetal_anat_nf, :fetal_anat_lvwidth, :fetal_anat_face, :fetal_anat_thorax, :fetal_anat_spine, :fetal_anat_upper_extrm, :fetal_anat_lower_extrm, 
+      :fetal_anat_abdominal_wall, :fetal_anat_abdominal_cavity, :fetal_anat_stomach, :fetal_anat_bladder, :fetal_anat_rkidney, :fetal_anat_lkidney, :fetal_anat_skeletal, :fetal_anat_gender, :maternal_anat_cervix, 
+      :maternal_anat_cervix_length, :maternal_anat_internalos, :maternal_anat_os_distance, 
+      :amniotic_afi, :amniotic_sdp, :amniotic_findings, 
+      :biometry_bpd, :biometry_hc, :biometry_ac, :biometry_fl, :biometry_hum, :biometry_cer, :biometry_cm, :biometry_ofd,)
     end
 end

@@ -79,22 +79,274 @@
 			</div>	
 		</div>
 		
-		<div id="tab_placenta">
+		<div id="tab_placenta" class="tab-pane fade">
+			<div class="col-md-6">
+				<div class="form-group">
+					<%= f.label "Overall" %>
+					<%= f.select(:placenta_general, [[''], ['Normal'],['Unusual 1'],['Unusual 2']], {}, {:class => "form-control"})%>
+				</div>
+				<div class="form-group">
+					<%= f.label "Longitudinal" %>
+					<%= f.select(:placenta_longitude, [[''], ['Normal'],['Unusual 3'],['Unusual 4']], {}, {:class => "form-control"})%>
+				</div>
+				<div class="form-group">
+					<%= f.label "Transverse" %>
+					<%= f.select(:placenta_transverse, [[''], ['Normal'],['Unusual 5'],['Unusual 6']], {}, {:class => "form-control"})%>
+				</div>
+				<div class="form-group">
+					<%= f.label "Appearance" %>
+					<%= f.select(:placenta_appearance, [[''], ['Normal'],['Unusual 7'],['Unusual 8']], {}, {:class => "form-control"})%>
+				</div>
+			</div>
+			
+			<div class="col-md-6">
+				<div class="form-group">
+					<%= f.label "Cord Vessels" %>
+					<%= f.select(:placenta_cord_vessels, [[''], ['Normal'],['Unusual 9'],['Unusual 10']], {}, {:class => "form-control"})%>
+				</div>
+				<div class="form-group">
+					<%= f.label "Grade" %>
+					<%= f.select(:placenta_grade, [[''], ['Normal'],['Unusual 11'],['Unusual 12']], {}, {:class => "form-control"})%>
+				</div>
+				<div class="form-group">
+					<%= f.label "Cord Insertion" %>
+					<%= f.select(:placenta_cord_ins, [[''], ['Normal'],['Unusual 13'],['Unusual 14']], {}, {:class => "form-control"})%>
+				</div>
+				<div class="form-group">
+					<%= f.label "Chorionicity" %>
+					<%= f.select(:placenta_chorionicity, [[''], ['Normal'],['Unusual 15'],['Unusual 16']], {}, {:class => "form-control"})%>
+				</div>	
+			</div>
 		</div>
 		
-		<div id="tab_heart">
+		<div id="tab_position" class="tab-pane fade">
+			<div class="form-group">
+				<%= f.label "Presentation" %>
+				<%= f.select(:fetal_pos_presentation, [[''], ['Presentation 1'],['Presentation 2'],['Presentation 3']], {}, {:class => "form-control"})%>
+			</div>
+				
+			<div class="form-group">
+				<%= f.label "Gestation Location" %>
+				<%= f.select(:fetal_pos_gestation_loc, [[''], ['Location 1'],['Location 2'],['Location 3']], {}, {:class => "form-control"})%>
+			</div>
+				
+			<div class="form-group">
+				<%= f.label "Probes" %>
+				<%= f.select(:fetal_pos_probes, [[''], ['Probes 1'],['Probes 2'],['Probes 3']], {}, {:class => "form-control"})%>
+			</div>
+				
+			<div class="form-group">
+				<%= f.label "Scan Quality" %>
+				<%= f.select(:fetal_pos_scan_quality, [[''], ['Magnificent'],['Good'], ['Acceptable'], ['Bad']], {}, {:class => "form-control"})%>
+			</div>
+				
+			<div class="form-group">
+				<%= f.label "Study Technique" %>
+				<%= f.select(:fetal_pos_study_tech, [[''], ['Method 1'],['Method 2'],['Method 3']], {}, {:class => "form-control"})%>
+			</div>
 		</div>
 		
-		<div id="tab_anatomy_f">
+		<div id="tab_heart" class="tab-pane fade">
+			<div class="col-md-6">
+				<div class="form-group">
+					<%= f.label "Heartrate (BPM)" %>
+					<%= f.number_field :fetal_heart_hrate, in: 1.0..300, step:1.0, :class => "form-control" %>
+				</div>
+				
+				<div class="form-group">
+						<%= f.label "4 Chamber View" %>
+						<%= f.select(:fetal_heart_4chamber, [[''], ['View 1'],['View 2'],['View 3']], {}, {:class => "form-control"})%>
+				</div>
+				
+				<div class="form-group">
+						<%= f.label "Location and Size" %>
+						<%= f.select(:fetal_heart_locsz, [[''], ['Area 1'],['Area 2'],['Area 3']], {}, {:class => "form-control"})%>
+				</div>
+				
+				<div class="form-group">
+						<%= f.label "Rhythm" %>
+						<%= f.select(:fetal_heart_rhythm, [[''], ['Normal'],['Unusual 1'],['Unusual 2']], {}, {:class => "form-control"})%>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group">
+						<%= f.label "Left Outflow Tract" %>
+						<%= f.select(:fetal_heart_lout, [[''], ['Normal'],['Unusual 3'],['Unusal 4']], {}, {:class => "form-control"})%>
+				</div>
+				
+				<div class="form-group">
+						<%= f.label "Right Outflow Tract" %>
+						<%= f.select(:fetal_heart_rout, [[''], ['Normal'],['Unusual 5'],['Unusual 6']], {}, {:class => "form-control"})%>
+				</div>
+				
+				<div class="form-group">
+						<%= f.label "Venous System" %>
+						<%= f.select(:fetal_heart_venous_sys, [[''], ['Normal'],['Unusual 7'],['Unusual 8']], {}, {:class => "form-control"})%>
+				</div>
+			</div>
 		</div>
 		
-		<div id="tab_anatomy_mom">
+		<div id="tab_anatomy_f" class="tab-pane fade">
+			<div class="col-md-6">
+				<div class="form-group">
+					<%= f.label "General Condition" %>
+					<%= f.select(:fetal_anat_general, [[''], ['Normal'],['Unusual 1'],['Unusual 2']], {}, {:class => "form-control"})%>
+				</div>
+					
+				<div class="form-group">
+					<%= f.label "Intracranial" %>
+					<%= f.select(:fetal_anat_intercranial, [[''], ['Normal'],['Unusual 3'],['Unusual 4']], {}, {:class => "form-control"})%>
+				</div>
+					
+				<div class="form-group">
+					<%= f.label "NF (mm)" %>
+					<%= f.number_field(:fetal_anat_nf, in: 0.0..100.0, :class => 'form-control')%>
+				</div>
+					
+				<div class="form-group">
+					<%= f.label "LV Width (mm)" %>
+					<%= f.number_field(:fetal_anat_lvwidth, in: 0.0..100.0, :class => 'form-control')%>
+				</div>
+					
+				<div class="form-group">
+					<%= f.label "Face" %>
+					<%= f.select(:fetal_anat_face, [[''], ['Normal'],['Unusual 5'],['Unusual 6']], {}, {:class => "form-control"})%>
+				</div>
+				
+				<div class="form-group">
+					<%= f.label "Thorax" %>
+					<%= f.select(:fetal_anat_thorax, [[''], ['Normal'],['Unusual 7'],['Unusual 8']], {}, {:class => "form-control"})%>
+				</div>
+					
+				<div class="form-group">
+					<%= f.label "Spine" %>
+					<%= f.select(:fetal_anat_spine, [[''], ['Normal'],['Unusual 9'],['Unusual 10']], {}, {:class => "form-control"})%>
+				</div>
+					
+				<div class="form-group">
+					<%= f.label "Upper Extremities" %>
+					<%= f.select(:fetal_anat_upper_extrm, [[''], ['Normal'],['Unusual 11'],['Unusual 12']], {}, {:class => "form-control"})%>
+				</div>
+					
+				<div class="form-group">
+					<%= f.label "Lower Extremities" %>
+					<%= f.select(:fetal_anat_lower_extrm, [[''], ['Normal'],['Unusual 13'], ['Unusual 14'], ['Bad']], {}, {:class => "form-control"})%>
+				</div>
+			</div>
+			
+			<div class="col-md-6">
+				<div class="form-group">
+					<%= f.label "Abdominal Wall" %>
+					<%= f.select(:fetal_anat_abdominal_wall, [[''], ['Normal'],['Unusual 15'],['Unusual 16']], {}, {:class => "form-control"})%>
+				</div>
+				
+				<div class="form-group">
+					<%= f.label "Abdominal Cavity" %>
+					<%= f.select(:fetal_anat_abdominal_cavity, [[''], ['Normal'],['Unusual 17'],['Unusual 18']], {}, {:class => "form-control"})%>
+				</div>
+					
+				<div class="form-group">
+					<%= f.label "Stomach" %>
+					<%= f.select(:fetal_anat_stomach, [[''], ['Normal'],['Unusual 19'],['Unusual 20']], {}, {:class => "form-control"})%>
+				</div>
+					
+				<div class="form-group">
+					<%= f.label "Bladder" %>
+					<%= f.select(:fetal_anat_bladder, [[''], ['Normal'],['Unusual 21'],['Unusual 22']], {}, {:class => "form-control"})%>
+				</div>
+					
+				<div class="form-group">
+					<%= f.label "Right Kidney" %>
+					<%= f.select(:fetal_anat_rkidney, [[''], ['Normal'],['Unusual 23'], ['Unusual 24']], {}, {:class => "form-control"})%>
+				</div>
+					
+				<div class="form-group">
+					<%= f.label "Left Kidney" %>
+					<%= f.select(:fetal_anat_lkidney, [[''], ['Normal'],['Unusual 25'],['Unusual 26']], {}, {:class => "form-control"})%>
+				</div>
+				
+				<div class="form-group">
+					<%= f.label "Skeletal" %>
+					<%= f.select(:fetal_anat_skeletal, [[''], ['Normal'],['Unusual 27'],['Unusual 28']], {}, {:class => "form-control"})%>
+				</div>
+					
+				<div class="form-group">
+					<%= f.label "Gender" %>
+					<%= f.select(:fetal_anat_gender, [[''], ['Male'],['Female']], {}, {:class => "form-control"})%>
+				</div>	
+			</div>	
 		</div>
 		
-		<div id="tab_amniotic">
+		<div id="tab_anatomy_mom" class="tab-pane fade">
+			<div class="form-group">
+				<%= f.label "Cervix" %>
+				<%= f.select(:maternal_anat_cervix, [[''], ['Normal'],['Unusual 1'],['Unusual 2']], {}, {:class => "form-control"})%>
+			</div>
+			<div class="form-group">
+				<%= f.label "Cervix Length (cm)" %>
+				<%= f.number_field(:maternal_anat_cervix_length, in:1..100, :class => "form-control")%>
+			</div>
+			<div class="form-group">
+				<%= f.label "Internal Os" %>
+				<%= f.select(:maternal_anat_internalos, [[''], ['Normal'],['Unusual 3'],['Unusual 4']], {}, {:class => "form-control"})%>
+			</div>
+			<div class="form-group">
+				<%= f.label "Distance to Os (cm)" %>
+				<%= f.number_field(:maternal_anat_os_distance, in:1..100, :class => "form-control")%>
+			</div>
+					
 		</div>
 		
-		<div id="tab_biometry">
+		<div id="tab_amniotic" class="tab-pane fade">
+			<div class="form-group">
+				<%= f.label "AFI" %>
+				<%= f.number_field(:amniotic_afi, in:1..100, :class => "form-control")%>
+			</div>
+			<div class="form-group">
+				<%= f.label "SPD" %>
+				<%= f.number_field(:amniotic_sdp, in:1..100, :class => "form-control")%>
+			</div>
+			<div class="form-group">
+				<%= f.label "Findings" %>
+				<%= f.select(:amniotic_findings, [[''], ['Normal'],['Unusual 1'],['Unusual 2']], {}, {:class => "form-control"})%>
+			</div>
+		</div>
+		
+		<div id="tab_biometry" class="tab-pane fade">
+			<div class="form-group">
+				<%= f.label "AFI" %>
+				<%= f.number_field(:biometry_bpd, in:1..100, :class => "form-control")%>
+			</div>
+			<div class="form-group">
+				<%= f.label "SPD" %>
+				<%= f.number_field(:biometry_hc, in:1..100, :class => "form-control")%>
+			</div>
+					<div class="form-group">
+				<%= f.label "AFI" %>
+				<%= f.number_field(:biometry_ac, in:1..100, :class => "form-control")%>
+			</div>
+			<div class="form-group">
+				<%= f.label "SPD" %>
+				<%= f.number_field(:biometry_fl, in:1..100, :class => "form-control")%>
+			</div>
+					<div class="form-group">
+				<%= f.label "AFI" %>
+				<%= f.number_field(:biometry_hum, in:1..100, :class => "form-control")%>
+			</div>
+			<div class="form-group">
+				<%= f.label "SPD" %>
+				<%= f.number_field(:biometry_cer, in:1..100, :class => "form-control")%>
+			</div>
+			<div class="form-group">
+				<%= f.label "CM" %>
+				<%= f.number_field(:biometry_cm, in:1..100, :class => "form-control")%>
+			</div>
+			<div class="form-group">
+				<%= f.label "OFD" %>
+				<%= f.number_field(:biometry_ofd, in:1..100, :class => "form-control")%>
+			</div>
+
 		</div>
 	</div>
 </div>

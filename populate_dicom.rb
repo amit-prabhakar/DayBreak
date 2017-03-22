@@ -38,6 +38,12 @@ files.each do |file|
     current = dcm.value("0018,1151")
     exposure = dcm.value("0018,1152")
     summary = dcm.print
+
+	#extract the image and convert it to jpg
+	pixels = dcm.image
+	pixels.format = "JPEG"
+	enc64 = Base64.encode64(pixels.to_blob)
+
     # Store the data in the database:
     e = Examination.new
     e.study = study
@@ -46,6 +52,7 @@ files.each do |file|
     e.current = current
     e.exposure = exposure
     e.summary = summary
+	e.image64 = enc64
     e.save
   end
 end

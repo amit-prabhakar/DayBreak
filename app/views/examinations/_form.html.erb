@@ -23,7 +23,10 @@
 		<%= f.text_field :name %>
 	</div>
 	
-	<img src="data:image/jpeg;base64,<%= @examination.image64 %>">
+	<h4 data-toggle="collapse" data-target="#images" class="bg-primary">Images</h4>
+	<div id="images" class="collapse">
+		<img src="data:image/jpeg;base64,<%= @examination.image64 %>">
+	</div>
 </div>
 
 <!-- The Tabs -->

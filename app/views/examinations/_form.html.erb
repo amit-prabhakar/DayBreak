@@ -25,7 +25,7 @@
 	
 	<h4 data-toggle="collapse" data-target="#images" class="bg-primary">Images</h4>
 	<div id="images" class="collapse">
-		<img src="data:image/jpeg;base64,<%= @examination.image64 %>">
+		<img id="dicom_image" height="240" src="data:image/jpeg;base64,<%= @examination.image64 %>">
 	</div>
 </div>
 
@@ -362,4 +362,5 @@
 		<%= f.submit "Save", :class => "btn btn-primary"%>
 	</div>
 </div>
+<script src="/assets/examinations.js"></script>
 <% end %>

@@ -20,7 +20,9 @@
 		<ul class="nav navbar-nav navbar-right">
 			<% if user_signed_in? %>
 			<li><a href="#"><span class="glyphicon glyphicon-user"></span> Preferences</a></li>
-			<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+			<li>
+			<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+			</li>
 			<% end %>
 		</ul>
 	</div>

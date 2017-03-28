@@ -359,7 +359,9 @@
 <!--Save, Cancel Buttons-->
 <div class="row">
 	<div class="pull-right">
-		<%= f.submit "Save", :class => "btn btn-primary"%>
+		<%= button_tag(type: "submit", name: "Save", :class => "btn btn-primary") do%>
+			<span class="glyphicon glyphicon-floppy-disk"></span> Save
+		<%end%>
 	</div>
 </div>
 <script src="/assets/examinations.js"></script>

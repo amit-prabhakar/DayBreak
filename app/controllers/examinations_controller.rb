@@ -46,6 +46,17 @@ class ExaminationsController < ApplicationController
 		if(@edd_fl)
 			@edd_fl = @edd_fl*2.25
 		end
+		
+		#booleans on whether to show sections or not depending on if the relevant information is there
+		@show_biometrics = (@edd_bpd || @edd_hc || @edd_ac || @edd_fl )
+		@show_maternal = (useful(@examination[:maternal_anat_cervix]) || useful(@examination[:maternal_anat_cervix_length]))
+		@show_fanat_intercranial = (useful(@examination[:fetal_anat_intercranial]))
+		@show_fanat_facial = (useful(@examination[:fetal_anat_face]))
+		@show_fanat_heart = (useful(@examination[:fetal_heart_locsz]))
+		@show_fanat_abdomen = (useful(@examination[:fetal_anat_abdominal_wall]) || useful(@examination[:fetal_anat_abdominal_cavity]))
+		@show_fanat_thorax = (useful(@examination[:fetal_anat_thorax]))
+		@show_fanat_spine = (useful(@examination[:fetal_anat_spine]))
+		@show_fanat_extremities = (useful(@examination[:fetal_anat_upper_extrm]) || useful(@examination[:fetal_anat_lower_extrm]))
 	end
 
   # GET /examinations/new
@@ -116,5 +127,9 @@ class ExaminationsController < ApplicationController
       :maternal_anat_cervix_length, :maternal_anat_internalos, :maternal_anat_os_distance, 
       :amniotic_afi, :amniotic_sdp, :amniotic_findings, 
       :biometry_bpd, :biometry_hc, :biometry_ac, :biometry_fl, :biometry_hum, :biometry_cer, :biometry_cm, :biometry_ofd,)
+    end
+    
+    def useful(var)
+    	return var && !var.empty?
     end
 end

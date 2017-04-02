@@ -21,7 +21,31 @@ class ExaminationsController < ApplicationController
 
 	# GET /examinations/1/report
 	def report
+		#estimated delivery date
+		@examination = Examination.find(params[:id])
+		@edd = @examination[:demographics_lmp] >> 9
 		
+		#predictions based on various biometries
+		#arbitrarily choose STAT*2.x
+		@edd_bpd = @examination[:biometry_bpd]
+		if(@edd_bpd)
+			@edd_bpd = @edd_bpd*2.0
+		end
+		
+		@edd_hc = @examination[:biometry_hc]
+		if(@edd_hc)
+			@edd_hc = @edd_hc*2.1
+		end
+		
+		@edd_ac = @examination[:biometry_ac]
+		if(@edd_ac)
+			@edd_ac = @edd_ac*2.2
+		end
+		
+		@edd_fl = @examination[:biometry_fl]
+		if(@edd_fl)
+			@edd_fl = @edd_fl*2.25
+		end
 	end
 
   # GET /examinations/new

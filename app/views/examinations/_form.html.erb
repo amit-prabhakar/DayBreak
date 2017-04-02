@@ -58,24 +58,24 @@
 				
 				<div class="form-group">
 					<%= f.label "Study Date" %>
-					<%= f.date_field :demographics_study_date, :class => "form-control" %>
+					<%= f.date_field :demographics_study_date, value: @examination.demographics_study_date || Date.today.strftime("%Y-%m-%d"), :class => "form-control" %>
 				</div>
 				
 				<div class="form-group">
 					<%= f.label "Gravida" %>
-					<%= f.number_field :demographics_gravida, :class => "form-control" %>
+					<%= f.number_field :demographics_gravida, :required => true, :class => "form-control" %>
 				</div>
 			</div>
 			
 			<div class="col-md-6">
 				<div class="form-group">
 					<%= f.label "Para" %>
-					<%= f.number_field :demographics_para, :class => "form-control" %>
+					<%= f.number_field :demographics_para, :required => true, :class => "form-control" %>
 				</div>
 				
 				<div class="form-group">
 					<%= f.label "LMP" %>
-					<%= f.date_field :demographics_lmp, :class => "form-control" %>
+					<%= f.date_field :demographics_lmp, :required => true, :class => "form-control" %>
 				</div>
 				
 				<div class="form-group">
@@ -332,27 +332,27 @@
 		
 		<div id="tab_biometry" class="tab-pane fade">
 			<div class="form-group">
-				<%= f.label "AFI" %>
+				<%= f.label "BPD" %>
 				<%= f.number_field(:biometry_bpd, in:1..100, :class => "form-control")%>
 			</div>
 			<div class="form-group">
-				<%= f.label "SPD" %>
+				<%= f.label "HC" %>
 				<%= f.number_field(:biometry_hc, in:1..100, :class => "form-control")%>
 			</div>
-					<div class="form-group">
-				<%= f.label "AFI" %>
+			<div class="form-group">
+				<%= f.label "AC" %>
 				<%= f.number_field(:biometry_ac, in:1..100, :class => "form-control")%>
 			</div>
 			<div class="form-group">
-				<%= f.label "SPD" %>
+				<%= f.label "FL" %>
 				<%= f.number_field(:biometry_fl, in:1..100, :class => "form-control")%>
 			</div>
-					<div class="form-group">
-				<%= f.label "AFI" %>
+			<div class="form-group">
+				<%= f.label "HUM" %>
 				<%= f.number_field(:biometry_hum, in:1..100, :class => "form-control")%>
 			</div>
 			<div class="form-group">
-				<%= f.label "SPD" %>
+				<%= f.label "CER" %>
 				<%= f.number_field(:biometry_cer, in:1..100, :class => "form-control")%>
 			</div>
 			<div class="form-group">

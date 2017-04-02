@@ -1,0 +1,192 @@
+<!--**protip: use col-xs-?? to prevent tables from taking up the entire page width-->
+
+<!-- Demographics, study information area -->
+<h2>Preliminary Report</h2>
+<div class="row">
+	<div class="row">
+	<div class="col-xs-6">
+		<table class="table">
+			<tr>
+				<td>Patient</td>
+				<td><%= @examination.name %></td>
+			</tr>
+			<tr>
+				<td>Gravida</td>
+				<td><%= @examination.demographics_gravida%></td>
+			</tr>
+			<tr>
+				<td>Para</td>
+				<td><%= @examination.demographics_para %></td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-xs-6">
+		<table class="table">
+			<tr>
+				<td>Study Date</td>
+				<td><%= @examination.demographics_study_date %></td>
+			</tr>
+			<tr>
+				<td>LMP</td>
+				<td><%= @examination.demographics_lmp%></td>
+			</tr>
+			<tr>
+				<td>Estimated Delivery Date</td>
+				<td><%= @edd %></td>
+			</tr>
+		</table>
+	</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-12">
+			<table class="table">
+			<tr>
+				<td>Study Location</td>
+				<td><%= @examination.demographics_study_location %></td>
+			</tr>
+			<tr>
+				<td>Patient History</td>
+				<td><%= @examination.demographics_history%></td>
+			</tr>
+		</table>
+		</div>
+	</div>
+</div>
+
+<!-- Fetal heart and maternal anatomy area -->
+<h3>Descriptive Data</h3>
+<div class="row">
+	<div class="col-xs-4">
+		<table class="table table-striped">
+			<tr>
+				<td>Fetal Position</td>
+				<td><%= @examination.fetal_pos_presentation %></td>
+			</tr>
+			<tr>
+				<td>Heart Rhythm</td>
+				<td><%= @examination.fetal_heart_rhythm%></td>
+			</tr>
+			<tr>
+				<td>Amniotic Fluid</td>
+				<td><%= @examination.amniotic_findings%></td>
+			</tr>
+			<tr>
+				<td>Cord Vessels</td>
+				<td><%= @examination.placenta_cord_vessels%></td>
+			</tr>
+			<tr>
+				<td>Cord Insertion</td>
+				<td><%= @examination.placenta_cord_ins %></td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-xs-4">
+		<table class="table table-striped">
+			<tr>
+				<td>Placenta</td>
+				<td><%= @examination.placenta_general%></td>
+			</tr>
+			<tr>
+				<td>Fetal Heart Rate</td>
+				<td><%= @examination.fetal_heart_hrate%></td>
+			</tr>
+			<tr>
+				<td>Internal OS</td>
+				<td><%= @examination.maternal_anat_internalos%></td>
+			</tr>
+			<tr>
+				<td>Distance to OS</td>
+				<td><%= @examination.maternal_anat_os_distance%>cm</td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-xs-4">
+		<img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png"></img>
+	</div>
+</div>
+
+<!-- Fetal anatomy -->
+<!-- WARNINGS HERE -->
+<h3>Fetal Anatomy</h3>
+<div class="row">
+	<div class="col-xs-12">
+	<table class="table table-striped">
+		<tr>
+			<td>Intercranial</td>
+			<td><%= @examination.fetal_anat_intercranial %></td>
+		</tr>
+		<tr>
+			<td>Facial</td>
+			<td><%= @examination.fetal_anat_face%></td>
+		</tr>
+		<tr>
+			<td>Heart</td>
+			<td><%= @examination.fetal_heart_locsz%></td>
+		</tr>
+		<tr>
+			<td>Abdomen</td>
+			<td>Wall: <%= @examination.fetal_anat_abdominal_wall %><br/>
+				Cavity: <%= @examination.fetal_anat_abdominal_cavity %>
+			</td>
+		</tr>
+		<tr>
+			<td>Thorax</td>
+			<td><%= @examination.fetal_anat_thorax %></td>
+		</tr>
+		<tr>
+			<td>Spine</td>
+			<td><%= @examination.fetal_anat_spine%></td>
+		</tr>
+		<tr>
+			<td>Extremities</td>
+			<td>Lower: <%= @examination.fetal_anat_lower_extrm%><br/>
+				Upper: <%= @examination.fetal_anat_upper_extrm%>
+			</td>
+		</tr>
+	</table>
+	</div>
+</div>
+
+<!-- Biometrics -->
+<h3>Biometrics</h3>
+<div class="row">
+	<div class="col-xs-12">
+		<table class="table table-striped">
+			<tr>
+				<td></td>
+				<td>BPD</td>
+				<td>HC</td>
+				<td>AC</td>
+				<td>FL</td>
+			</tr>
+			<tr>
+				<td>Observed</td>
+				<td><%= @examination.biometry_bpd %></td>
+				<td><%= @examination.biometry_hc %></td>
+				<td><%= @examination.biometry_ac %></td>
+				<td><%= @examination.biometry_fl %></td>
+			</tr>
+			<tr>
+				<td>ETA</td>
+				<td><%= @edd_bpd %></td>
+				<td><%= @edd_hc %></td>
+				<td><%= @edd_ac %></td>
+				<td><%= @edd_fl %></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<!-- Maternal Anatomy-->
+<h3>Maternal Anatomy</h3>
+<div class="row">
+	<div class="col-xs-12">
+		<table class="table table-striped">
+			<tr>
+				<td>Cervix</td>
+				<td><%= @examination.maternal_anat_cervix %> (<%= @examination.maternal_anat_cervix_length%>cm)</td>
+			</tr>
+		</table>
+	</div>
+</div>

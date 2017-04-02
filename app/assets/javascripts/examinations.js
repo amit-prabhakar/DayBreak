@@ -6,3 +6,5 @@ $("#dicom_image").on("click", function()
 	fullsize.height("auto"); //make the image its original size
 	fullsize.appendTo($(w.document.body));
 });
+
+

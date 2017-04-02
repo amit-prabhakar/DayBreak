@@ -44,6 +44,7 @@
 	
 	<div class="tab-content">
 		<div id="tab_demographics" class="tab-pane fade in active">
+			<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
 					<%= f.label "Study Location" %>
@@ -81,7 +82,18 @@
 					<%= f.label "Maternal Weight" %>
 					<%= f.number_field :demographics_maternal_weight, :class => "form-control" %>
 				</div>
-			</div>	
+			</div>
+			</div>
+			
+			<!-- History could be a lengthy input. Plan for it-->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<%= f.label "History" %>
+						<%= f.text_area :demographics_history, :class => "form-control" %>
+					</div>
+				</div>
+			</div>
 		</div>
 		
 		<div id="tab_placenta" class="tab-pane fade">

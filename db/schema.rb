@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170322000355) do
+ActiveRecord::Schema.define(version: 20170402193616) do
 
   create_table "examinations", force: :cascade do |t|
     t.string   "study"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20170322000355) do
     t.string   "placenta_cord_ins"
     t.string   "placenta_chorionicity"
     t.string   "image64"
+    t.string   "demographics_history"
   end
 
   create_table "models", force: :cascade do |t|

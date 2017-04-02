@@ -82,7 +82,7 @@ class ExaminationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def examination_params
       params.require(:examination).permit(:study, :name, :voltage, :current, :exposure, 
-      :demographics_study_location, :demographics_accession, :demographics_study_date, 
+      :demographics_study_location, :demographics_accession, :demographics_study_date, :demographics_history, 
       :demographics_gravida, :demographics_para, :demographics_lmp, :demographics_maternal_weight, 
       :fetal_pos_presentation, :fetal_pos_gestation_loc, :fetal_pos_probes, :fetal_pos_scan_quality, :fetal_pos_study_tech,
       :placenta_general, :placenta_longitude, :placenta_transverse, :placenta_appearance, :placenta_cord_vessels, :placenta_grade, :placenta_cord_ins, :placenta_chorionicity, 

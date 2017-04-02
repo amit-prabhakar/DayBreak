@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :examinations
+  resources :examinations do
+  	member do #makes the repor function apply to an individual examination and not the whole group
+  		get 'report'
+  	end
+  end
   devise_for :users
   get 'welcome/index'
   root 'examinations#index'

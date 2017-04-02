@@ -359,9 +359,10 @@
 <!--Save, Cancel Buttons-->
 <div class="row">
 	<div class="pull-right">
-		<%= button_tag(type: "submit", name: "Save", :class => "btn btn-primary") do%>
+		<%= button_tag(type: "submit", name: "Save", :class => "btn btn-success") do%>
 			<span class="glyphicon glyphicon-floppy-disk"></span> Save
 		<%end%>
+		<%= link_to "<span class=\"glyphicon glyphicon-book\"></span> Generate Report".html_safe, report_examination_path(@examination), :class => 'btn btn-primary'%>
 	</div>
 </div>
 <script src="/assets/examinations.js"></script>

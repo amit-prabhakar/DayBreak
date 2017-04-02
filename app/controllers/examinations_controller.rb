@@ -19,6 +19,11 @@ class ExaminationsController < ApplicationController
   def show
   end
 
+	# GET /examinations/1/report
+	def report
+		
+	end
+
   # GET /examinations/new
   def new
     @examination = Examination.new

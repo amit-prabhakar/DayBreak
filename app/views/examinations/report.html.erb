@@ -71,14 +71,18 @@
 				<td>Amniotic Fluid</td>
 				<td><%= @examination.amniotic_findings%></td>
 			</tr>
+			<%if(@show_cord_vessels)%>
 			<tr>
 				<td>Cord Vessels</td>
 				<td><%= @examination.placenta_cord_vessels%></td>
 			</tr>
+			<%end%>
+			<%if(@show_cord_ins)%>
 			<tr>
 				<td>Cord Insertion</td>
 				<td><%= @examination.placenta_cord_ins %></td>
 			</tr>
+			<%end%>
 		</table>
 	</div>
 	<div class="col-xs-4">
@@ -88,8 +92,8 @@
 				<td><%= @examination.placenta_general%></td>
 			</tr>
 			<tr>
-				<td>Fetal Heart Rate</td>
-				<td><%= @examination.fetal_heart_hrate%></td>
+				<td style="<%= @panic if @warn_heartrate%>">Fetal Heart Rate</td>
+				<td style="<%= @panic if @warn_heartrate%>"><%= @examination.fetal_heart_hrate%></td>
 			</tr>
 			<tr>
 				<td>Internal OS</td>

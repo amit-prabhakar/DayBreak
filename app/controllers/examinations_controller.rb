@@ -57,6 +57,15 @@ class ExaminationsController < ApplicationController
 		@show_fanat_thorax = (useful(@examination[:fetal_anat_thorax]))
 		@show_fanat_spine = (useful(@examination[:fetal_anat_spine]))
 		@show_fanat_extremities = (useful(@examination[:fetal_anat_upper_extrm]) || useful(@examination[:fetal_anat_lower_extrm]))
+		@show_cord_vessels = (useful(@examination[:placenta_cord_vessels]))
+		@show_cord_ins = (useful(@examination[:placenta_cord_ins]))
+		
+		#warning booleans
+		heartrate = @examination[:fetal_heart_hrate]
+		@warn_heartrate = useful(heartrate) && (heartrate.to_i < 100 || heartrate.to_i > 180)
+		
+		#inline style necessary evil to get colors to print
+		@panic = "background-color: #f2dede !important;color: red !important;"
 	end
 
   # GET /examinations/new

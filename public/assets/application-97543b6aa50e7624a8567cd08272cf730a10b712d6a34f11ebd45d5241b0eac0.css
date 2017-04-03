@@ -8800,3 +8800,10 @@ button.close {
     display: none !important;
   }
 }
+@media print {
+  /* line 19, /home/Daniel/Documents/cs491/project/app/assets/stylesheets/application.scss */
+  .panic {
+    background-color: #f2dede;
+    color: red;
+  }
+}

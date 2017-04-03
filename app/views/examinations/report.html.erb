@@ -119,14 +119,14 @@
 	<table class="table table-striped">
 		<%if(@show_fanat_intercranial)%>
 		<tr>
-			<td>Intercranial</td>
-			<td><%= @examination.fetal_anat_intercranial %></td>
+			<td style="<%= @panic if @warn_evenodd%>">Intercranial</td>
+			<td style="<%= @panic if @warn_evenodd%>"><%= @examination.fetal_anat_intercranial %></td>
 		</tr>
 		<%end%>
 		<%if(@show_fanat_facial)%>
 		<tr>
-			<td>Facial</td>
-			<td><%= @examination.fetal_anat_face%></td>
+			<td style="<%= @panic if @warn_evenodd%>">Facial</td>
+			<td style="<%= @panic if @warn_evenodd%>"><%= @examination.fetal_anat_face%></td>
 		</tr>
 		<%end%>
 		<%if(@show_fanat_heart)%>

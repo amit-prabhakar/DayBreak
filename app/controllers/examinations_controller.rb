@@ -64,6 +64,18 @@ class ExaminationsController < ApplicationController
 		heartrate = @examination[:fetal_heart_hrate]
 		@warn_heartrate = useful(heartrate) && (heartrate.to_i < 100 || heartrate.to_i > 180)
 		
+		intercranial = @examination[:fetal_anat_intercranial]
+		facial = @examination[:fetal_anat_face]
+		@warn_evenodd = false
+		if(useful(intercranial) && useful(facial))
+			if(intercranial == "Unusual 3" && facial == "Unusual 6")
+				@warn_evenodd = true
+			end
+			if(intercranial == "Unusual 4" && facial == "Unusual 5")
+				@warn_evenodd = true
+			end
+		end
+		
 		#inline style necessary evil to get colors to print
 		@panic = "background-color: #f2dede !important;color: red !important;"
 	end

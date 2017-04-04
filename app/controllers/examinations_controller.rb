@@ -29,22 +29,22 @@ class ExaminationsController < ApplicationController
 		#arbitrarily choose STAT*2.x
 		@edd_bpd = @examination[:biometry_bpd]
 		if(@edd_bpd)
-			@edd_bpd = @edd_bpd*2.0
+			@edd_bpd = (@edd_bpd*2.0).round(2)
 		end
 		
 		@edd_hc = @examination[:biometry_hc]
 		if(@edd_hc)
-			@edd_hc = @edd_hc*2.1
+			@edd_hc = (@edd_hc*2.1).round(2)
 		end
 		
 		@edd_ac = @examination[:biometry_ac]
 		if(@edd_ac)
-			@edd_ac = @edd_ac*2.2
+			@edd_ac = (@edd_ac*2.2).round(2)
 		end
 		
 		@edd_fl = @examination[:biometry_fl]
 		if(@edd_fl)
-			@edd_fl = @edd_fl*2.25
+			@edd_fl = (@edd_fl*2.25).round(2)
 		end
 		
 		#booleans on whether to show sections or not depending on if the relevant information is there
@@ -110,10 +110,10 @@ class ExaminationsController < ApplicationController
   def update
     respond_to do |format|
       if @examination.update(examination_params)
-        format.html { redirect_to @examination, notice: 'Examination was successfully updated.' }
-        format.json { render :show, status: :ok, location: @examination }
+        format.html { redirect_to action: "edit", notice: 'Examination was successfully updated.' }
+        format.json { render :edit, status: :ok, location: @examination }
       else
-        format.html { render :edit }
+        format.html { render :edit, notice: 'Saving error.' }
         format.json { render json: @examination.errors, status: :unprocessable_entity }
       end
     end

@@ -12,7 +12,7 @@ Daybreak is a platform to read, edit, generate reports from DICOM images
 ## Credits
 Daybreak med
 ## Data
-Based on the DICOM gem we are currently using the following is the data we can extract from DICOM files:
+Based on the DICOM parser we are using the following is the data we can extract from DICOM files:
 
  1 0002,0000         File Meta Information Group Length           UL     4 230 
  
